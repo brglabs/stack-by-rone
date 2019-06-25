@@ -1,0 +1,42 @@
+version: '3.3'
+
+services:
+
+  frontend:
+    build:
+      context: ./images/node
+      args:
+        - PORT_DEFAULT=8080
+    ports:
+      - 8080:8080
+    volumes:
+      - ./src/frontend:/app
+    environment:
+      - API_URL=http://localhost:8080/
+
+  backend:
+    build:
+      context: ./images/node
+      args:
+        - PORT_DEFAULT=8081
+    ports:
+      - 8081:8081
+    volumes:
+      - ./src/backend:/app
+    depends_on: 
+      - mongodb
+    environment:
+      - DATABASE_URL=mongodb:27017
+      - DATABASE_USER=root
+      - DATABASE_PASS=123456
+
+  mongodb:
+    image: mongo
+    restart: always
+    # environment:
+      # MONGO_INITDB_ROOT_USERNAME: root
+      # MONGO_INITDB_ROOT_PASSWORD: 123456
+    ports:
+      - 27017:27017
+    volumes:
+      - ./volumes/mongo/data/db:/data/db
