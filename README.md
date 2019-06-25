@@ -15,7 +15,6 @@ docker-compose up -d -f docker-compose-gitlab.yml
 
 ```html
 docker-compose build 
-docker-compose up -d -f docker-compose-gitlab.yml 
 ```
 
 #### Subir a stack padrão
