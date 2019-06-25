@@ -1,24 +1,24 @@
 
-####Subir o Registry
+#### Subir o Registry
 
 ```html
 docker-compose up -d -f docker-compose-registry.yml 
 ```
 
-####Subir o GitLab
+#### Subir o GitLab
 
 ```html
 docker-compose up -d -f docker-compose-gitlab.yml 
 ```
 
-####Buildar as imagens da stack padrão
+#### Buildar as imagens da stack padrão
 
 ```html
 docker-compose build 
 docker-compose up -d -f docker-compose-gitlab.yml 
 ```
 
-####Subir a stack padrão
+#### Subir a stack padrão
 
 ```html
 docker-compose up
