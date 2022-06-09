@@ -1,5 +1,5 @@
  resource "null_resource" "this" {
   provisioner "local-exec" {
-    command = var.text
+    command = "${var.text}"
   }
 }
