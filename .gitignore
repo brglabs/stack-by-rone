@@ -1,3 +1,6 @@
-./volumes/
-./src/frontend/node_modules/
-./src/backend/node_modules/
+.terraform
+builds
+*.hcl
+*.tfplan
+terraform_*.tf
+project_*.tf
